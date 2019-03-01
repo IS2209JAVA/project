@@ -22,6 +22,7 @@ public class Java_Project extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
+        //gjfishgfushdibfhsbgufvgtusvfyisbifutbdsu'
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
