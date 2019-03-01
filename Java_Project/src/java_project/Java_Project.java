@@ -12,8 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-//gffdfdfdfd
-//hgvcgcfcf
+
 /**
  *
  * @author ciano
@@ -23,7 +22,6 @@ public class Java_Project extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
-        //gjfishgfushdibfhsbgufvgtusvfyisbifutbdsu'
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
