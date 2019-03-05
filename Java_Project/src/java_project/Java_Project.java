@@ -23,11 +23,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 import static javafx.scene.paint.Color.color;
+import static jdk.nashorn.internal.objects.NativeRegExp.test;
 
 
 /**
  *
- * @author ciano
+ * @author ciara
  */
 public class Java_Project extends Application {
     
@@ -40,21 +41,23 @@ public class Java_Project extends Application {
         
         
         
-        
          //define our controls and some of their properities
          //Button for breakfast
         Image image = new Image(getClass().getResourceAsStream("breakfast.jpg"));
         Button btnBreakfast = new Button();
         btnBreakfast.setGraphic(new ImageView(image));
         //btnBreakfast.setText("Breakfast");
-        btnBreakfast.setStyle("-fx-font: 22 arial; -fx-base: #edc7b7;");
+        btnBreakfast.setStyle("-fx-font: 22 arial; -fx-base: #AC3B61;");
 
          //Button for Dinner
         Image image1 = new Image(getClass().getResourceAsStream("dinner.jpg"));
         Button btnDinner = new Button();
         btnDinner.setGraphic(new ImageView(image1));
         //btnDinner.setText("Dinner");
-        btnDinner.setStyle("-fx-font: 22 arial; -fx-base: #edc7b7;");
+        btnDinner.setStyle("-fx-font: 22 arial; -fx-base: #AC3B61;");
+        
+        
+        
 
        btnBreakfast.setOnAction(new EventHandler<ActionEvent>() {
             
@@ -90,20 +93,29 @@ public class Java_Project extends Application {
          
         //use a VBOX pane and add our controls to its list of children
         VBox root = new VBox();
+         root.setId("pane");
         root.getChildren().add(btnBreakfast);
         root.getChildren().add(btnDinner);
 
               
         //GridePane for main screen menu
         GridPane grid = new GridPane(); //Creates our gridpane
+        grid.setId("pane");
         grid.setAlignment(Pos.CENTER); //Align everything to the center of our gridpane     
         grid.setVgap(10); // the Vertical gap between the grid rows
         
+        
+    
         grid.add(btnBreakfast, 1, 2);
         grid.add(btnDinner, 1, 3);
-      Scene scene = new Scene(grid, 600, 650, Color.BISQUE);
+      Scene scene = new Scene(grid, 650, 700);
+      scene.getStylesheets().addAll(this.getClass().getResource("MainCSS.css").toExternalForm());
      
     
+    
+      
+      
+      
   
 
         primaryStage.setTitle("Welcome to the menu!");
