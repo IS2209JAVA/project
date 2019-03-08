@@ -117,6 +117,7 @@ public class Java_Project extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        
     }
     /**
      * @param args the command line arguments
