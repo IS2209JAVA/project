@@ -24,7 +24,8 @@ import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 import static javafx.scene.paint.Color.color;
 import static jdk.nashorn.internal.objects.NativeRegExp.test;
-
+import UI.Breakfast;
+import UI.HotMeal;
 
 /**
  *
@@ -58,8 +59,9 @@ public class MainMenu extends Application {
             
             @Override
             public void handle(ActionEvent event) {
-                
-                
+                //open breakfast window
+                Breakfast.start();
+                primaryStage.close();
                //button code
                 
                 
@@ -75,7 +77,8 @@ public class MainMenu extends Application {
             
             @Override
             public void handle(ActionEvent event) {
-                
+                HotMeal.start();
+                primaryStage.close();
                 
                
                 //button code
@@ -103,7 +106,7 @@ public class MainMenu extends Application {
     
         grid.add(btnBreakfast, 1, 2);
         grid.add(btnDinner, 1, 3);
-      Scene scene = new Scene(grid, 650, 700);
+      Scene scene = new Scene(grid, 800, 650);
       scene.getStylesheets().addAll(this.getClass().getResource("MainCSS.css").toExternalForm());
      
     
