@@ -18,20 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import static javafx.scene.paint.Color.color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -45,7 +32,7 @@ public class Login extends Application {
     
     //while creating this class, press ALT + ENTER over errors to auto imports
     @Override
-    public void start(Stage LoginStage) {
+    public void start(Stage loginStage) {
         
         String username, password;
         username = "Java";
@@ -61,17 +48,7 @@ public class Login extends Application {
         ImageView logo = new ImageView();
         logo.setFitWidth(500);
         logo.setFitHeight(250);
-        
-
-            // create Background 
-            //Background background = new Background(logo); 
-       //Setting the position of the image 
-        //logo.setX(50); 
-        //logo.setY(25); 
  
-        //BackgroundSize bs = new BackgroundSize(100, 100, true, true, true, false);
-        //BackgroundImage bi = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, bs);
-        //Background bg = new Background(bi);
      
         logo.setImage(image);
         grid.getChildren().addAll(logo);
@@ -114,9 +91,9 @@ public class Login extends Application {
         });
 
     Scene scene = new Scene(grid, 500, 430); //Create our scene, add our pane, and define dimensions.
-    LoginStage.setTitle("Log In"); //Sets the stage title
-    LoginStage.setScene(scene);// adds the scene to the stage
-    LoginStage.show(); //show the stage
+    loginStage.setTitle("Log In"); //Sets the stage title
+    loginStage.setScene(scene);// adds the scene to the stage
+    loginStage.show(); //show the stage
     
     }
 
