@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import UI.MainMenu;
 import java.io.File;
 import javax.imageio.ImageIO;
+import UI.Option;
 
 
 
@@ -87,27 +88,28 @@ public class Login {
         //Button
         Button btn = new Button("Sign In"); 
         grid.add(btn, 0, 8); 
-        
-        //Button Action
-        btn.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent e ){
-                if(txtUsername.getText().equals(username) && txtPassword.getText().equals(password)){
-                    ErrorText.setText("Successful Login!");
-                   
-                }else{
-                    ErrorText.setText("Wrong details. Try Again.");
-                }
-            }      
-        });
 
-    Scene scene = new Scene(grid, 500, 430); //Create our scene, add our pane, and define dimensions.
+    Scene scene = new Scene(grid, 900, 750); //Create our scene, add our pane, and define dimensions.
       Stage SecondryStage = new Stage();
     SecondryStage.setTitle("Log In"); //Sets the stage title
     
     SecondryStage.setScene(scene);// adds the scene to the stage
     SecondryStage.show(); //show the stage
+    //Button Action
+    btn.setOnAction(new EventHandler<ActionEvent>(){
+        @Override
+        public void handle(ActionEvent e ){
+            if(txtUsername.getText().equals(username) && txtPassword.getText().equals(password)){
+                ErrorText.setText("Successful Login!");
+                Option.start();
+                SecondryStage.close();                
+                   
+            }else{
+                ErrorText.setText("Wrong details. Try Again.");
+            }
+        }      
+    });
     
-     }
+    }
     
 }
