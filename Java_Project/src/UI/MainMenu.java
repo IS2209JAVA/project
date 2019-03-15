@@ -26,6 +26,7 @@ import static javafx.scene.paint.Color.color;
 import static jdk.nashorn.internal.objects.NativeRegExp.test;
 import UI.Breakfast;
 import UI.HotMeal;
+import UI.Login;
 
 /**
  *
@@ -52,6 +53,11 @@ public class MainMenu extends Application {
         //btnDinner.setText("Dinner");
         btnDinner.setStyle("-fx-font: 22 arial; -fx-base: #AC3B61;");
         
+        Image image2 = new Image(getClass().getResourceAsStream("person.png"));
+        Button btnManager = new Button();
+        btnManager.setGraphic(new ImageView(image2));
+        
+        
         
         
 
@@ -75,16 +81,30 @@ public class MainMenu extends Application {
         });
          
          
+         
+         btnManager.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                Login.start();
+      
+            }
+        });
+         
+         
         //use a VBOX pane and add our controls to its list of children
         VBox root = new VBox();
          root.setId("pane");
+         
         root.getChildren().add(btnBreakfast);
         root.getChildren().add(btnDinner);
+        root.getChildren().add(btnManager);
 
               
         //GridePane for main screen menu
         GridPane grid = new GridPane(); //Creates our gridpane
         grid.setId("pane");
+        grid.add(btnManager, 2, 1);
         grid.setAlignment(Pos.CENTER); //Align everything to the center of our gridpane     
         grid.setVgap(10); // the Vertical gap between the grid rows
         
