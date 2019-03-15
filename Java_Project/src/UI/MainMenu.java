@@ -61,33 +61,19 @@ public class MainMenu extends Application {
             public void handle(ActionEvent event) {
                 //open breakfast window
                 Breakfast.start();
-                primaryStage.close();
-               //button code
-                
-                
+
             }
         });
-        
-        
-        
 
-        
-        
          btnDinner.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
                 HotMeal.start();
-                primaryStage.close();
-                
-               
-                //button code
-                
-                
-                
+      
             }
         });
-        
+         
          
         //use a VBOX pane and add our controls to its list of children
         VBox root = new VBox();
