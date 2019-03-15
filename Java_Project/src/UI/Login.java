@@ -5,6 +5,8 @@
  */
 package UI;
 
+
+
 import java.awt.Insets;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -21,18 +23,25 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import UI.MainMenu;
+import java.io.File;
+import javax.imageio.ImageIO;
 
 
 
 /**
  *
- * @author 117331683
+ * @author Ciara
  */
-public class Login extends Application {
-    
-    //while creating this class, press ALT + ENTER over errors to auto imports
-    @Override
-    public void start(Stage loginStage) {
+public class Login {
+
+   
+    public static void start(){
+        
+        
+        
+            
+        
         
         String username, password;
         username = "Java";
@@ -44,13 +53,14 @@ public class Login extends Application {
         grid.setHgap(5); 
         grid.setVgap(5); 
            //Add logo
-        Image image = new Image(getClass().getResourceAsStream("logo.jpg"));
+       
         ImageView logo = new ImageView();
+        
         logo.setFitWidth(500);
         logo.setFitHeight(250);
  
      
-        logo.setImage(image);
+      
         grid.getChildren().addAll(logo);
        
         
@@ -84,6 +94,7 @@ public class Login extends Application {
             public void handle(ActionEvent e ){
                 if(txtUsername.getText().equals(username) && txtPassword.getText().equals(password)){
                     ErrorText.setText("Successful Login!");
+                   
                 }else{
                     ErrorText.setText("Wrong details. Try Again.");
                 }
@@ -91,17 +102,12 @@ public class Login extends Application {
         });
 
     Scene scene = new Scene(grid, 500, 430); //Create our scene, add our pane, and define dimensions.
-    loginStage.setTitle("Log In"); //Sets the stage title
-    loginStage.setScene(scene);// adds the scene to the stage
-    loginStage.show(); //show the stage
+      Stage SecondryStage = new Stage();
+    SecondryStage.setTitle("Log In"); //Sets the stage title
     
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
+    SecondryStage.setScene(scene);// adds the scene to the stage
+    SecondryStage.show(); //show the stage
+    
+     }
     
 }
