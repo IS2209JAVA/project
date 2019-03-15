@@ -92,7 +92,7 @@ public class MainMenu extends Application {
     
         grid.add(btnBreakfast, 1, 2);
         grid.add(btnDinner, 1, 3);
-      Scene scene = new Scene(grid, 800, 650);
+      Scene scene = new Scene(grid, 900, 750);
       scene.getStylesheets().addAll(this.getClass().getResource("MainCSS.css").toExternalForm());
      
     
