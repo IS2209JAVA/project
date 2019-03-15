@@ -28,13 +28,7 @@ public class Breakfast {
         Button backBtn = new Button("Back");
         allMenuForm.add(backBtn,0,0);
    
-        backBtn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-        });
+        
         
         //Create the scene
         Scene myScene = new Scene(allMenuForm,800,650);
@@ -42,6 +36,14 @@ public class Breakfast {
         primaryStage.setTitle("Breakfast");
         primaryStage.setScene(myScene);
         primaryStage.show();
+        
+        backBtn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                    primaryStage.close();
+            }
+        });
     }
     
     
