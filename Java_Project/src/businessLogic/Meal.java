@@ -24,7 +24,7 @@ public class Meal {
         }
     }
     
-    public int getId(){
+    public int getID(){
         return id;
     }
     
@@ -114,24 +114,14 @@ public class Meal {
     }
     
     /*---Constructor---*/
-    public Meal(){
-        id = 0;
-        calories = -1;
-        mealName = "";
-        contents = "";
-        category = "";
-        containsNuts = false;
-        vegetarian = false;
-        vegan = false;
-        glutenFree = false;
-        price = -1.0F;        
+    public Meal(){      
     }
-    
+   
     public Meal(int id, int calories, String mealName, String contents, String category,
             Boolean containsNuts, Boolean vegetarian, Boolean vegan, Boolean glutenFree, Float price){
         
         //Ensuring no blank item
-        if(price > 0.0 && id != 0 && !mealName.equals("") && !contents.equals("") && !category.equals("")){
+        //if(price > 0.0 && id != 0 && !mealName.equals("") && !contents.equals("") && !category.equals("")){
             this.id = id;
             this.calories = calories;
             this.category = category;
@@ -142,7 +132,24 @@ public class Meal {
             this.vegan = vegan;
             this.glutenFree = glutenFree;
             this.price = price;                    
-        }
+        //}
+    }
+    
+    public Meal(int calories, String mealName, String contents, String category,
+            Boolean containsNuts, Boolean vegetarian, Boolean vegan, Boolean glutenFree, Float price){
+        
+        //Ensuring no blank item
+        //if(price > 0.0 && id != 0 && !mealName.equals("") && !contents.equals("") && !category.equals("")){
+            this.calories = calories;
+            this.category = category;
+            this.mealName = mealName;
+            this.contents = contents;
+            this.containsNuts = containsNuts;
+            this.vegetarian = vegetarian;;
+            this.vegan = vegan;
+            this.glutenFree = glutenFree;
+            this.price = price;                    
+        //}
     }
     
     /*-----Class Methods-----*/
