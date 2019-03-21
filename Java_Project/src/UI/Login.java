@@ -27,6 +27,7 @@ import UI.MainMenu;
 import java.io.File;
 import javax.imageio.ImageIO;
 import UI.Option;
+import javafx.stage.StageStyle;
 
 
 
@@ -93,14 +94,21 @@ public class Login {
         Button btn = new Button("Sign In"); 
         grid.add(btn, 0, 8); 
 
-    Scene scene = new Scene(grid, 700, 750); //Create our scene, add our pane, and define dimensions.
+    Scene scene = new Scene(grid, 700, 700); //Create our scene, add our pane, and define dimensions.
+    
      scene.getStylesheets().add("UI/MainCSS.css");
+     
      
     
       Stage SecondryStage = new Stage();
-   
+               SecondryStage.setMaxHeight(700);
+
+           SecondryStage.setMaxWidth(750);
+
+
     
     SecondryStage.setTitle("Log In"); //Sets the stage title
+ 
     
     SecondryStage.setScene(scene);// adds the scene to the stage
     SecondryStage.show(); //show the stage
