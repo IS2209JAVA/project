@@ -127,7 +127,10 @@ public class MainMenu extends Application {
     
         grid.add(btnBreakfast, 1, 2);
         grid.add(btnDinner, 1, 3);
-      Scene scene = new Scene(grid, 900, 750);
+      Scene scene = new Scene(grid, 700, 750);
+          primaryStage.setMaxHeight(750);
+
+               primaryStage.setMaxWidth(700);
       scene.getStylesheets().addAll(this.getClass().getResource("MainCSS.css").toExternalForm());
      
     
