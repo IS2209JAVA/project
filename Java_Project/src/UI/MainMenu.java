@@ -27,6 +27,7 @@ import static jdk.nashorn.internal.objects.NativeRegExp.test;
 import UI.Breakfast;
 import UI.HotMeal;
 import UI.Login;
+import javafx.scene.shape.Circle;
 
 /**
  *
@@ -40,18 +41,32 @@ public class MainMenu extends Application {
         
          //define our controls and some of their properities
          //Button for breakfast
-        Image image = new Image(getClass().getResourceAsStream("breakfast.jpg"));
+       
         Button btnBreakfast = new Button();
-        btnBreakfast.setGraphic(new ImageView(image));
+        
+       
         //btnBreakfast.setText("Breakfast");
         btnBreakfast.setStyle("-fx-font: 22 arial; -fx-base: #AC3B61;");
 
          //Button for Dinner
-        Image image1 = new Image(getClass().getResourceAsStream("dinner.jpg"));
+        
         Button btnDinner = new Button();
-        btnDinner.setGraphic(new ImageView(image1));
+       
+       
+       
         //btnDinner.setText("Dinner");
         btnDinner.setStyle("-fx-font: 22 arial; -fx-base: #AC3B61;");
+        
+        
+        
+         btnBreakfast.setId("btn");
+        btnDinner.setId("btn1");
+        btnBreakfast.setPadding(Insets.EMPTY);
+        btnDinner.setPadding(Insets.EMPTY);
+        
+        
+        
+        
         
         Image image2 = new Image(getClass().getResourceAsStream("person.png"));
         Button btnManager = new Button();
