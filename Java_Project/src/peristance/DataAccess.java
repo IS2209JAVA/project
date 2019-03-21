@@ -21,10 +21,10 @@ public class DataAccess {
    Connection conn;
    ArrayList<Meal> storedMeals;
    
-   public DataAccess(){
+   public  DataAccess(){
        try
        {
-           this.conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MENU");
+           this.conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MENU;user=root;password=root;");
        }
        catch(SQLException ex){
            System.out.println("Database Connection Errror " + ex.getMessage());
@@ -110,32 +110,95 @@ public class DataAccess {
    
    //CRUD OPERATIONS
    public void create(Meal mealInput){
-       mealInput.setID(0); //Id is set to 0 for protection
-       this.storedMeals.add(mealInput);
-       this.saveMealsToStorage(); //persist changes to database    
+       if (mealInput.getID() < 0){ //assumes db auto-increments
+           try{
+                          
+               String sqlInsert = "INSERT INTO MEAL (TITLE, CONTENTS, CONTAINSNUTS, VEGETARIAN, VEGAN, GLUTENFREE, PRICE, CALORIES, CATEGORY) VALUEs ('"
+                        + mealInput.getMealName() + "', '"
+                        + mealInput.getContents() + "', '"
+                        + mealInput.getContainsNuts() + "', '"
+                        + mealInput.getVegetarian() + "', '"
+                        + mealInput.getVegan() + "', '"
+                        + mealInput.getGlutenFree() + "', '"
+                        + mealInput.getPrice() + "', '"
+                        + mealInput.getCalories() + "', '"
+                        + mealInput.getPrice() + "', '"
+                        + mealInput.getCategory() + "')";
+               
+               Statement sqlStmt = this.conn.createStatement();
+               sqlStmt.executeUpdate(sqlInsert);
+               
+           }catch(SQLException ex){
+                    System.out.println(ex.toString());
+           }//try catch
+       }//end if     
    }//end create
    
    public ArrayList<Meal> retrieve(){
-       return this.storedMeals;
+      ArrayList<Meal> list = new ArrayList<Meal>();
+      
+      try{
+          //String database ="jdbc:derby://localhost:1527/MENU;user=root;password=root;";
+          //Connection conn = DriverManager.getConnection(database);
+          
+          //String sql = "SELECT * FROM MEAL";
+          
+          
+        
+          Statement sqlMeals = this.conn.createStatement();
+          ResultSet rsMeals = sqlMeals.executeQuery("SELECT * FROM MEAL");
+          
+          Meal currentMeal = null;
+          
+           while(rsMeals.next()){
+               currentMeal = new Meal();
+               currentMeal.setID(rsMeals.getInt("MEALID"));
+               currentMeal.setMealName(rsMeals.getString("TITLE"));
+               currentMeal.setContents(rsMeals.getString("CONTENTS"));
+               currentMeal.setContainsNuts(rsMeals.getBoolean("CONTAINSNUTS"));
+               currentMeal.setVegetarain(rsMeals.getBoolean("VEGETARIAN"));
+               currentMeal.setVegan(rsMeals.getBoolean("VEGAN"));
+               currentMeal.setGlutenFree(rsMeals.getBoolean("GLUTENFREE"));
+               currentMeal.setPrice(rsMeals.getFloat("PRICE"));
+               currentMeal.setCalories(rsMeals.getInt("CALORIES"));
+               currentMeal.setCategory(rsMeals.getString("CATEGORY"));
+               
+               list.add(currentMeal);
+           }//end while
+           conn.close();
+      }catch(SQLException ex){
+           System.out.println(ex.toString());
+      }
+      return list;
    }//end retrieve
    
    public void update(Meal mealInput){
-       for(int i = 0; i < this.storedMeals.size(); i++){
-           if(this.storedMeals.get(i).getID() == mealInput.getID()){
-               this.storedMeals.set(i, mealInput);
-               break;
-           }//end if
-       }//end for
-       
-       this.saveMealsToStorage();//Presist changes to database
+      try{
+       Statement sqlUpdateStmt = this.conn.createStatement();
+       sqlUpdateStmt.executeUpdate("UPDATE MEAL SET TITLE = '" 
+                        + mealInput.getMealName() + ", CONTENTS='"
+                        + mealInput.getContents() + ", CONTAINSNUTS='"
+                        + mealInput.getContainsNuts() + ", VEGETARIAN='"
+                        + mealInput.getVegetarian() + ", VEGAN"
+                        + mealInput.getVegan() + ", GLUTENFREE='"
+                        + mealInput.getGlutenFree() + ", PRICE"
+                        + mealInput.getPrice() + ", CALORIES"
+                        + mealInput.getCalories() + "' CATEGORY"
+                        + mealInput.getCategory()
+                        + "' WHERE ID=" + mealInput.getID());
+       conn.close();
+       }catch(SQLException ex){
+           System.out.println(ex.toString());
+       }
    }//End update
    
    public void delete(int id){
-       for(int i = 0; i < this.storedMeals.size(); i++){
-           if(this.storedMeals.get(i).getID() == id){
-               this.storedMeals.remove(i);
-           }//end if
-       }//end for
-       this.saveMealsToStorage();//Persist changes to db
+       try{
+       Statement sqlDeleteStmt = this.conn.createStatement();
+       sqlDeleteStmt.executeUpdate("DELETE FROM MEAL WHERE ID = " + id);
+       conn.close();
+       }catch(SQLException ex){
+           System.out.println(ex.toString());
+       }
    }//end delete method
 }//end class
