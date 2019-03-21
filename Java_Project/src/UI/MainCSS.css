@@ -16,3 +16,41 @@ and open the template in the editor.
 
     
 }
+
+#btn{
+    
+  
+    -fx-border-style: none;
+    
+    -fx-image-borders: none;
+     -fx-graphic: url("breakfast.jpg");
+    -fx-border-radius: 30;
+}
+
+#btn1 {
+    
+    -fx-border-style: none;
+      -fx-border-style: none;
+    -fx-image-borders: none;
+     -fx-graphic: url("dinner.jpg"); 
+    
+}
+
+.grid {
+     
+   
+    -fx-background-radius: 5.0;
+    -fx-background-insets: 0.0 5.0 0.0 5.0;
+    -fx-padding: 10;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-background-image: url("logo.png");
+    -fx-background-repeat: no-repeat no-repeat;
+  
+   
+}
+
+.button{
+-fx-background-color: linear-gradient(#bab2b5, #bab2b5);
+-fx-background-radius: 100;
+ }
