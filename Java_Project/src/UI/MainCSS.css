@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Ciara
 */
 #pane{
-  -fx-background-color: #ffffff;
+  -fx-background-color: #DEA2A2;
     -fx-background-repeat: stretch;   
     -fx-background-size: 900 506;
     -fx-background-position: center center;
@@ -45,6 +45,7 @@ and open the template in the editor.
     -fx-hgap: 10;
     -fx-vgap: 10;
     -fx-background-image: url("logo.png");
+    -fx-background-color: #DEA2A2;
     -fx-background-repeat: no-repeat no-repeat;
   
    
