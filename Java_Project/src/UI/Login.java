@@ -30,6 +30,7 @@ import UI.Option;
 
 
 
+
 /**
  *
  * @author Ciara
@@ -45,14 +46,17 @@ public class Login {
         
         
         String username, password;
-        username = "Java";
-        password = "2019";
+        username = "123";
+        password = "123";
         
         //GridePane
         GridPane grid = new GridPane(); //Creates our gridpane
+        grid.getStyleClass().add("grid");
+       
         grid.setAlignment(Pos.CENTER); 
         grid.setHgap(5); 
         grid.setVgap(5); 
+       
            //Add logo
        
         ImageView logo = new ImageView();
@@ -89,8 +93,13 @@ public class Login {
         Button btn = new Button("Sign In"); 
         grid.add(btn, 0, 8); 
 
-    Scene scene = new Scene(grid, 900, 750); //Create our scene, add our pane, and define dimensions.
+    Scene scene = new Scene(grid, 700, 750); //Create our scene, add our pane, and define dimensions.
+     scene.getStylesheets().add("UI/MainCSS.css");
+     
+    
       Stage SecondryStage = new Stage();
+   
+    
     SecondryStage.setTitle("Log In"); //Sets the stage title
     
     SecondryStage.setScene(scene);// adds the scene to the stage
