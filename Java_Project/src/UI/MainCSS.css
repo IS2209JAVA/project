@@ -67,7 +67,7 @@ and open the template in the editor.
    -fx-text-fill: navy
  }
  
- .btn2 {
+ .backBtn {
      
      -fx-background-color: linear-gradient(#bab2b5, #bab2b5);
 -fx-background-radius: 100;

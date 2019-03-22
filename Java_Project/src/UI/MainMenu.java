@@ -70,7 +70,7 @@ public class MainMenu extends Application {
         
         Image image2 = new Image(getClass().getResourceAsStream("person.png"));
         Button btnManager = new Button();
-        btnManager.getStyleClass().add("btn2");
+        btnManager.getStyleClass().add("backBtn");
         btnManager.setGraphic(new ImageView(image2));
         
         
@@ -121,7 +121,7 @@ public class MainMenu extends Application {
         //GridePane for main screen menu
         GridPane grid = new GridPane(); //Creates our gridpane
         grid.setId("pane");
-        grid.add(btnManager, 0, 1);
+        grid.add(btnManager, 1, 1);
         grid.setAlignment(Pos.CENTER); //Align everything to the center of our gridpane     
         grid.setVgap(10); // the Vertical gap between the grid rows
         
@@ -149,7 +149,8 @@ public class MainMenu extends Application {
       MainMenu.class.getResourceAsStream( "logoicon.png" ))); 
         primaryStage.setScene(scene);
         primaryStage.show();
-
+        primaryStage.setResizable(false);
+        
         
     }
     /**

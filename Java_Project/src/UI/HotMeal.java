@@ -21,6 +21,7 @@ public class HotMeal {
     public static void start() {
         GridPane allMenuForm = new GridPane();
         allMenuForm.setAlignment(Pos.CENTER);
+        allMenuForm.getStyleClass().add("pane");
         
         //Just something to put in the form
         Button backBtn = new Button("Back");
@@ -30,6 +31,7 @@ public class HotMeal {
         
         //Create the scene
         Scene myScene = new Scene(allMenuForm,800,650);
+          myScene.getStylesheets().add("UI/MainCSS.css");
         Stage primaryStage = new Stage();
         primaryStage.setTitle("HotMeal");
         primaryStage.setScene(myScene);

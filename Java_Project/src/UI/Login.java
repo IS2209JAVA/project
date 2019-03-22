@@ -93,7 +93,7 @@ public class Login {
         //Button
         Button btn = new Button("Sign In"); 
          Button btnBack = new Button("  Back  ");
-          btnBack.getStyleClass().add("btn2");
+          btnBack.getStyleClass().add("backBtn");
         grid.add(btn, 0, 8); 
         grid.add(btnBack, 0, 9);
 
