@@ -16,6 +16,15 @@ and open the template in the editor.
 
     
 }
+.pane{
+  -fx-background-color: #DEA2A2;
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+
+    
+}
 
 #btn{
     
@@ -40,8 +49,9 @@ and open the template in the editor.
      
    
     -fx-background-radius: 5.0;
-    -fx-background-insets: 0.0 5.0 0.0 5.0;
-    -fx-padding: 10;
+     -fx-border-style: none;
+   
+  
     -fx-hgap: 10;
     -fx-vgap: 10;
     -fx-background-image: url("logo.png");
@@ -52,6 +62,16 @@ and open the template in the editor.
 }
 
 .button{
--fx-background-color: linear-gradient(#bab2b5, #bab2b5);
+ -fx-background-color: linear-gradient(#ffffff, #ffffff);
 -fx-background-radius: 100;
+   -fx-text-fill: navy
+ }
+ 
+ .btn2 {
+     
+     -fx-background-color: linear-gradient(#bab2b5, #bab2b5);
+-fx-background-radius: 100;
+ -fx-text-fill: black;
+     
+     
  }
