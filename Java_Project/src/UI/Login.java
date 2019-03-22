@@ -92,7 +92,10 @@ public class Login {
         
         //Button
         Button btn = new Button("Sign In"); 
+         Button btnBack = new Button("  Back  ");
+          btnBack.getStyleClass().add("btn2");
         grid.add(btn, 0, 8); 
+        grid.add(btnBack, 0, 9);
 
     Scene scene = new Scene(grid, 700, 700); //Create our scene, add our pane, and define dimensions.
     
@@ -101,6 +104,12 @@ public class Login {
      
     
       Stage SecondryStage = new Stage();
+      
+      SecondryStage.getIcons().add(
+   new Image(
+      MainMenu.class.getResourceAsStream( "logoicon.png" ))); 
+        SecondryStage.setScene(scene);
+        SecondryStage.show();
                SecondryStage.setMaxHeight(700);
 
            SecondryStage.setMaxWidth(750);
@@ -113,6 +122,17 @@ public class Login {
     SecondryStage.setScene(scene);// adds the scene to the stage
     SecondryStage.show(); //show the stage
     //Button Action
+    
+    
+    btnBack.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                    SecondryStage.close();
+            }
+        });
+    
+    
     btn.setOnAction(new EventHandler<ActionEvent>(){
         @Override
         public void handle(ActionEvent e ){
