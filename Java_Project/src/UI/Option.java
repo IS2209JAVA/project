@@ -46,7 +46,7 @@ public class Option {
               
         //GridePane for main screen menu
         GridPane grid = new GridPane(); //Creates our gridpane
-        grid.setId("pane");
+       grid.getStyleClass().add("pane");
         grid.setAlignment(Pos.CENTER); //Align everything to the center of our gridpane     
         grid.setVgap(10); // the Vertical gap between the grid rows
         
@@ -55,6 +55,7 @@ public class Option {
         grid.add(setMenu, 1, 2);
         grid.add(allMenu, 1, 3);
         Scene scene = new Scene(grid, 900, 750);
+         scene.getStylesheets().add("UI/MainCSS.css");
   
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Options!");
