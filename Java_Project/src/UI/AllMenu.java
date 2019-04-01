@@ -21,6 +21,7 @@ import UI.Detail;
 public class AllMenu {
     public static void start() {
         GridPane allmenupane = new GridPane();
+        allmenupane.getStyleClass().add("pane");
         allmenupane.setAlignment(Pos.CENTER);
         
         //Just something to put in the form
@@ -31,6 +32,7 @@ public class AllMenu {
    
         //Create the scene
         Scene myScene = new Scene(allmenupane,800,650);
+        myScene.getStylesheets().add("UI/MainCSS.css");
         Stage primaryStage = new Stage();
         primaryStage.setTitle("AllMenu");
         primaryStage.setScene(myScene);
