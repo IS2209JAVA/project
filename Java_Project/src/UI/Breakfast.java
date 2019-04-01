@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 public class Breakfast {
     public static void start() {
         GridPane allMenuForm = new GridPane();
-       allMenuForm.getStyleClass().add("pane");
+        allMenuForm.getStyleClass().add("pane");
         allMenuForm.setAlignment(Pos.CENTER);
         
         //Just something to put in the form
@@ -32,7 +32,7 @@ public class Breakfast {
         
         //Create the scene
         Scene myScene = new Scene(allMenuForm,800,650);
-          myScene.getStylesheets().add("UI/MainCSS.css");
+        myScene.getStylesheets().add("UI/MainCSS.css");
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Breakfast");
         primaryStage.setScene(myScene);
