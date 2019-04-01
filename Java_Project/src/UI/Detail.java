@@ -23,8 +23,9 @@ import UI.AllMenu;
 public class Detail {
     public static void start() {
         GridPane detailpane = new GridPane(); 
+        detailpane.getStyleClass().add("pane");
         detailpane.setAlignment(Pos.CENTER); //place everything in the center of the gridpane
-        detailpane.setHgap(6); //???????
+        detailpane.setHgap(6); // Place nodes in the pane 
         detailpane.setVgap(6); // Place nodes in the pane 
 
         TextField nameTextField = new TextField();
@@ -71,6 +72,7 @@ public class Detail {
         GridPane.setHalignment(saveBtn, HPos.RIGHT); // Create a scene and place it in the stage 
         
         Scene scene = new Scene(detailpane,800,650); 
+         scene.getStylesheets().add("UI/MainCSS.css");
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Detail"); // Set the stage title 
         primaryStage.setScene(scene); // Place the scene in the stage 
@@ -96,6 +98,7 @@ public class Detail {
                 Button noBtn = new Button("No");
  
                 GridPane MessageWindow = new GridPane();
+                MessageWindow.getStyleClass().add("pane");
                 MessageWindow.setAlignment(Pos.CENTER); 
                 MessageWindow.setVgap(12); // Place nodes in the pane 
                 MessageWindow.add(messageLabel,0,0);
@@ -105,6 +108,7 @@ public class Detail {
                 GridPane.setHalignment(noBtn, HPos.RIGHT);
 
                 Scene messageScene = new Scene(MessageWindow, 300, 100);
+                 messageScene.getStylesheets().add("UI/MainCSS.css");
  
                 // New window (Stage)
                 Stage messageWindow = new Stage();
